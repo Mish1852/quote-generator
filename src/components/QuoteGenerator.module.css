@@ -1,0 +1,529 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  animation: fadeInDown 1s ease-out;
+}
+
+.quoteBox {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 700px;
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  animation: floatIn 0.8s ease-out;
+}
+
+.quoteBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.quoteContent {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.quote {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #333;
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+.quote::before, .quote::after {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  line-height: 0;
+}
+
+.quote::before {
+  left: -10px;
+  top: 20px;
+}
+
+.quote::after {
+  right: -10px;
+  bottom: 0;
+}
+
+.author {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 0.8rem;
+}
+
+.newQuoteBtn, .commentBtn {
+  background-color: #1a2a6c;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newQuoteBtn:hover, .commentBtn:hover {
+  background-color: #0d1b4a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.newQuoteBtn:active, .commentBtn:active, .tweetBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tweetBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #1DA1F2;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.tweetBtn:hover {
+  background-color: #0d8fd8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.twitterIcon {
+  fill: currentColor;
+}
+
+/* Add Quote Form Styles */
+.addQuoteSection {
+  width: 100%;
+  max-width: 700px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.addQuoteBtn {
+  background-color: #fdbb2d;
+  color: #333;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.addQuoteBtn:hover {
+  background-color: #ffa600;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.addQuoteBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  margin-top: 1rem;
+  animation: scaleIn 0.4s ease-out;
+}
+
+.formTitle {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #1a2a6c;
+  text-align: center;
+  font-weight: 600;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.input, .textArea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.input:focus, .textArea:focus, .commentTextArea:focus {
+  outline: none;
+  border-color: #1a2a6c;
+  box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.2);
+  background-color: #fff;
+}
+
+.textArea {
+  resize: vertical;
+}
+
+.error {
+  color: #b21f1f;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  animation: shake 0.4s ease-in-out;
+  padding-left: 0.5rem;
+}
+
+.formButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cancelBtn, .submitBtn {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cancelBtn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.cancelBtn:hover {
+  background-color: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cancelBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submitBtn {
+  background-color: #1a2a6c;
+  color: white;
+}
+
+.submitBtn:hover {
+  background-color: #0d1b4a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submitBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Comment Section Styles */
+.commentSection {
+  margin-top: 2rem;
+  text-align: left;
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.commentTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #1a2a6c;
+  font-weight: 600;
+}
+
+.commentList {
+  margin-bottom: 2rem;
+}
+
+.noComments {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.commentItem {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid #1a2a6c;
+  animation: slideInRight 0.4s ease-out;
+}
+
+.commentItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.commentAuthor {
+  font-weight: 600;
+  color: #1a2a6c;
+  font-size: 1.1rem;
+}
+
+.commentTime {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.commentText {
+  line-height: 1.6;
+  color: #333;
+}
+
+.commentForm {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.5s ease-out;
+}
+
+.commentForm:focus-within {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.commentTextArea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.submitCommentBtn {
+  background-color: #1a2a6c;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.submitCommentBtn:hover {
+  background-color: #0d1b4a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submitCommentBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .quoteBox {
+    padding: 1.5rem;
+  }
+  
+  .quote {
+    font-size: 1.4rem;
+  }
+  
+  .author {
+    font-size: 1rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .newQuoteBtn, .tweetBtn, .commentBtn {
+    width: 100%;
+    margin: 0;
+  }
+} 

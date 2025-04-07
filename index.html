@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Quote Generator</h1>
+                <p class="subtitle">Get inspired with programming wisdom</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="quote-card">
+                <div class="quote-content">
+                    <i class="fas fa-code quote-icon"></i>
+                    <p class="quote-text">Loading...</p>
+                </div>
+                <p class="quote-author">- Loading...</p>
+            </div>
+
+            <div class="actions">
+                <button id="newQuoteBtn" class="btn">
+                    <i class="fas fa-code-branch btn-icon"></i>
+                    New Quote
+                </button>
+                <button id="copyBtn" class="btn btn-secondary">
+                    <i class="fas fa-copy btn-icon"></i>
+                    Copy
+                </button>
+                <button id="tweetBtn" class="btn btn-secondary">
+                    <i class="fab fa-twitter btn-icon"></i>
+                    Tweet
+                </button>
+            </div>
+
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <div id="commentsList">
+                    <!-- Comments will be added here -->
+                </div>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <label for="commentText">Add a Comment</label>
+                        <textarea id="commentText" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-plus btn-icon"></i>
+                        Add Comment
+                    </button>
+                </form>
+            </div>
+
+            <div class="add-quote-section">
+                <h2>Add Your Quote</h2>
+                <form id="addQuoteForm">
+                    <div class="form-group">
+                        <label for="quoteText">Quote Text</label>
+                        <textarea id="quoteText" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="quoteAuthor">Author</label>
+                        <input type="text" id="quoteAuthor" required>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-plus btn-icon"></i>
+                        Add Quote
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <button id="scrollToTopBtn" class="btn btn-secondary">
+                <i class="fas fa-arrow-up btn-icon"></i>
+                Back to Top
+            </button>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script type="module" src="quotes.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html> 
