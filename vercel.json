@@ -16,6 +16,18 @@
   ],
   "routes": [
     {
+      "src": "/styles.css",
+      "dest": "/styles.css"
+    },
+    {
+      "src": "/app.js",
+      "dest": "/app.js"
+    },
+    {
+      "src": "/quotes.js",
+      "dest": "/quotes.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
