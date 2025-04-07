@@ -15,8 +15,12 @@ package-lock.json
 /coverage
 
 # next.js
-/.next/
-/out/
+.next/
+src/
+public/
+next.config.ts
+next-env.d.ts
+tsconfig.json
 
 # production
 /build
@@ -37,10 +41,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
 
 # IDE and editor files
 .idea/
