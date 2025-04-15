@@ -17,19 +17,31 @@
   "routes": [
     {
       "src": "/styles.css",
-      "dest": "/styles.css"
+      "dest": "/styles.css",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
     },
     {
       "src": "/app.js",
-      "dest": "/app.js"
+      "dest": "/app.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
     },
     {
       "src": "/quotes.js",
-      "dest": "/quotes.js"
+      "dest": "/quotes.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/index.html",
+      "headers": {
+        "cache-control": "no-cache, no-store, must-revalidate"
+      }
     }
   ]
 } 
